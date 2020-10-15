@@ -24,7 +24,7 @@ Another handy way is to tell the library's name, the targeted version via URL in
 
 ### Glimpse of UI
 
-![Screenshot](../master/2020-10-15 10-03-43.png)
+![Screenshot](../master/Capture.png)
 
 
 ### Todo (check open issues):
