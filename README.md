@@ -22,6 +22,11 @@ I just copied the snippet and made it easier to load a couple of libraries in th
 
 Another handy way is to tell the library's name, the targeted version via URL in https://cdnjs.cloudflare.com/ , its initial variable (`_`, `jQuery` ...) and its path of version if known, because JavaScript libraries are implemented very differently, there is much debugging to make it more intelligent and stable.
 
+### Glimpse of UI
+
+![Screenshot](../master/2020-10-15 10-03-43.png)
+
+
 ### Todo (check open issues):
 
    1- Test and improve
