@@ -24,6 +24,8 @@ Another handy way is to tell the library's name, the targeted version via URL in
 
 ### Glimpse of UI
 
+<hr>
+
 ![Screenshot](../master/Capture.png)
 
 
