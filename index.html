@@ -5,258 +5,157 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Arrays</title>
-    <link href="https://fonts.googleapis.com/css?family=Merienda|Raleway&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+    <link rel="stylesheet" href="resources\css\style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript"></script>
     <script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/picnic" media="print" onload="this.media='all'">
     <meta name="theme-color" content="#317EFB" />
     <link rel="icon" href="icon.jpg">
-    <style>
-        .ShowHide {
-            overflow: hidden;
-            font-family: Raleway, sans-serif;
-            background-color: #fff;
-            color: rgb(9 , 19 , 51) ;
-            padding: 8px;
-        }
-
-        #left {
-            overflow: hidden;
-            text-align: center;
-            height: 40px;
-            padding: 5px;
-        }
-
-        #right {
-            float: right;
-            width: 30px;
-            height: 30px;
-            padding: 4px;
-            text-align: center;
-        }
-
-        .ShowHide a {
-            color: #000;
-            text-decoration: none;
-        }
-
-        .ShowHide a:hover {
-            text-decoration: underline;
-        }
-
-        #error {
-            width: 800px;
-            margin: 0 auto;
-            background: #f0faf3;
-            padding: 10px;
-        }
-
-        #options {
-            width: 800px;
-            margin: 0 auto;
-            background:whitesmoke;
-            padding: 10px;
-            z-index: -1;
-        }
-
-        h1 {
-            font-size: 21px;
-            font-weight: 200;
-            font-family: helvetica, arial;
-            color: rgba(0, 0, 25, 0.5);
-            background: #222;
-            color: #bada55
-        }
-
-        #loaded_list {
-            font-size: 10px;
-            font-weight: 50;
-            font-family: helvetica, arial;
-            color: rgba(0, 0, 25, 0.5);
-            background: #500;
-            color: #baaaaa
-        }
-        
-        #Frameworks{
-            background: rgb(9 , 19 , 51);
-            border: 2px solid transparent;
-            color: whitesmoke;
-            margin-left: 350px;
-            margin-top: 30px;
-/*            margin-bottom: 40px;*/
-        }
-        #Frameworks:hover{
-            background: transparent;
-            border: 2px solid rgb(9 , 19 , 51);
-            color: rgb(9 , 19 , 51);
-        }
-        
-        .ui-autocomplete {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            z-index: 1000;
-            display: none;
-            float: left;
-            min-width: 160px;
-            padding: 5px 0;
-            margin: 2px 0 0;
-            list-style: none;
-            font-size: 14px;
-            text-align: left;
-            background-color: #ffffff;
-            border: 1px solid #cccccc;
-            border: 1px solid rgba(0, 0, 0, 0.15);
-            border-radius: 4px;
-            -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
-            background-clip: padding-box;
-        }
-
-        .ui-autocomplete>li>div {
-            display: block;
-            padding: 3px 20px;
-            clear: both;
-            font-weight: normal;
-            line-height: 1.42857143;
-            color: #333333;
-            white-space: nowrap;
-        }
-
-        .ui-state-hover,
-        .ui-state-active,
-        .ui-state-focus {
-            text-decoration: none;
-            color: #262626;
-            background-color: #f5f5f5;
-            cursor: pointer;
-        }
-
-        .ui-helper-hidden-accessible {
-            border: 0;
-            clip: rect(0 0 0 0);
-            height: 1px;
-            margin: -1px;
-            overflow: hidden;
-            padding: 0;
-            position: absolute;
-            width: 1px;
-        }
-        b {
-          color: #bada55;
-          font-weight:bold;
-          -webkit-transition:color .2s ease-in-out;
-          -moz-transition:color .2s ease-in-out;
-          -o-transition:color .2s ease-in-out;
-          transition:color .2s ease-in-out;
-        }
-        .highlight { color:rgba(207, 95, 205, 1);}
-    </style>
     <meta name="Description" content="WYSIWYG JavaScript libraries loading using browser developer tools for testing and learning. Load Jquery, Underscore, Lodash and more in your browser console">
 
 </head>
 
 <body>
-    <div id="error">
-        <h1 style="color: white;font-family: 'Raleway', sans-serif;text-align: center">
-			INTERACTIVE_ARRAYS<a href="https://github.com/bacloud14/Interactive_Arrays">&nbsp;&nbsp;&nbsp;&nbsp;Fork🔗</a>
-		</h1>
-        <p style="background-color:transparent;color:rgb(9 , 19 , 51);font-size:1.5em;text-align: center;font-weight: bold;font-family: Raleway,sans-serif">Welcome to Interactive Arrays! 
-			<br>Load JavaScript libraries instantly in browser developer's console and instantly start playing with !
-			
-		</p>	
-		<p style="background-color:transparent;color:rgb(150 , 8 , 0);font-size:0.8em;text-align: center;font-weight: bold;font-family: sans-serif"><br>Chrome console is not open so you need to open it to continue!<br>( Press 'ctrl + shift + I' to open console )</p>
-        <img height="100%" width="100%" class="lozad" data-src="resources/images/Peugeot_404_Injection.jpg" alt="404, not found :( , Yet !"/>
+    <!-- Change div id to id="error" to display and remove style from div tag -->
+    <div class="hidden" style="display: none;">
+      <header>
+        <h1>INTERACTIVE_ARRAYS</h1>
+        <a type="button" class="btn btn-primary" id="fork_btn" href="https://github.com/bacloud14/Interactive_Arrays" target="_blank">FORK<i class="fas fa-code-branch"></i></a>
+        <h4>Welcome to Interactive Arrays!<br>Load JavaScript libraries in browser developer's console to instantly start playing.</h4>
+
+        <hr>
+
+        <p class="warn">Chrome console is not open. Please open to continue!<br>( Press 'ctrl + shift + I' to open console )</p>
+      </header>
+
+      <div>
+        <img id="error" class="lozad" data-src="resources/images/Peugeot_404_Injection.jpg" alt="404, not found :( , Yet !"/>
         <p>
-            The Peugeot 404 is a large family car produced by French automobile manufacturer Peugeot from 1960 to 1975. A truck body style variant was marketed until 1988. The 404 was manufactured under licence in various African countries until 1991 (in Kenya) and was manufactured in Argentina by Safrar/Sevel in El Palomar, in Québec, Canada at the St-Bruno-de-Montarville SOMA Ltd. plant and in Chile by Automotores Franco Chilena S.A. in Los Andes. <a href="https://en.wikipedia.org/wiki/Peugeot_404">The Wikipedia</a>
+          The Peugeot 404 is a large family car produced by French automobile manufacturer Peugeot from 1960 to 1975. A truck body style variant was marketed until 1988. The 404 was manufactured under licence in various African countries until 1991 (in Kenya) and was manufactured in Argentina by Safrar/Sevel in El Palomar, in Québec, Canada at the St-Bruno-de-Montarville SOMA Ltd. plant and in Chile by Automotores Franco Chilena S.A. in Los Andes. <a href="https://en.wikipedia.org/wiki/Peugeot_404">The Wikipedia</a>
         </p>
+      </div>
     </div>
 
-    <div id="options">
-        <h1 style="color: white;font-family: 'Raleway', sans-serif;text-align: center">
-			INTERACTIVE_ARRAYS<a href="https://github.com/bacloud14/Interactive_Arrays">&nbsp;&nbsp;&nbsp;&nbsp;Fork🔗</a>
-		</h1>
-        <div id='loaded_list'></div>
 
-        <p>Before loading a library, please check Chrome console for loggings on what's going on!</p>
-        <p style="font-weight: bold">A) Select libraries you want to load</p>
+    <!-- Change div id to id="options" to hide -->
+    <div class="main">
+      <header>
+        <h1>INTERACTIVE_ARRAYS</h1>
+        <a type="button" class="btn btn-primary" id="fork_btn" href="https://github.com/bacloud14/Interactive_Arrays" target="_blank">FORK<i class="fas fa-code-branch"></i></a>
+        <p class="warn">Before loading a library, please check Chrome console for loggings!</p>
+      </header>
+
+      <hr>
+
+      <div class="container" id="lib_select">
+        <h4>A) Select libraries you want to load</h4>
         <div id="frameworks">
-            <label><input id="@lodash" value="lodash" type="checkbox" onChange="toggleVisibility('lodashIcon');"><span class="checkable" style="margin: 20px;">lodash</span>
+            <label><input id="@lodash" value="lodash" type="checkbox" onChange="toggleVisibility('lodashIcon');"><span class="checkable">lodash</span>
             </label>
-            <label><input id="@underscore" value="underscore" type="checkbox" onChange="toggleVisibility('underscoreIcon');"><span class="checkable" style="margin: 20px;">underscore</span>
+            <label><input id="@underscore" value="underscore" type="checkbox" onChange="toggleVisibility('underscoreIcon');"><span class="checkable">underscore</span>
             </label>
-            <label><input id="@ramda" value="ramda" type="checkbox" onChange="toggleVisibility('ramdaIcon');"><span class="checkable" style="margin: 20px;">ramda</span>
+            <label><input id="@ramda" value="ramda" type="checkbox" onChange="toggleVisibility('ramdaIcon');"><span class="checkable">ramda</span>
             </label>
-            <label><input id="@moment" value="moment" type="checkbox" onChange="toggleVisibility('momentIcon');"><span class="checkable" style="margin: 20px;">moment</span>
+            <label><input id="@moment" value="moment" type="checkbox" onChange="toggleVisibility('momentIcon');"><span class="checkable">moment</span>
             </label>
-            <label><input id="@math" value="math" type="checkbox" onChange="toggleVisibility('mathIcon');"><span class="checkable" style="margin: 20px;">math</span>
+            <label><input id="@math" value="math" type="checkbox" onChange="toggleVisibility('mathIcon');"><span class="checkable">math</span>
             </label>
-            <label><input id="@collect" value="collect" type="checkbox" onChange="toggleVisibility('collectIcon');"><span class="checkable" style="margin: 20px;">collect</span>
+            <label><input id="@collect" value="collect" type="checkbox" onChange="toggleVisibility('collectIcon');"><span class="checkable">collect</span>
             </label>
         </div>
-        <button id="Frameworks">Load</button>
-        <br>
-        <img id="lodashIcon" class="lozad" data-src="resources/images/lodash.png" style="visibility:hidden ; margin:10px;" width="100" />
-        <img id="underscoreIcon" class="lozad" data-src="resources/images/underscore.png" style="visibility:hidden;margin:10px;" width="100" />
-        <img id="ramdaIcon" class="lozad" data-src="resources/images/ramda.png" style="visibility:hidden;margin:10px;" width="100" />
-        <img id="momentIcon" class="lozad" data-src="resources/images/moment.png" style="margin:10px;visibility:hidden" width="100" />
-        <img id="mathIcon" class="lozad" data-src="resources/images/math.png" style="margin:10px;visibility:hidden" width="100" />
-        <img id="collectIcon" class="lozad" data-src="resources/images/collect.jpg" style="margin:10px;visibility:hidden" width="120" height="30px" />
+        <button class="btn btn-secondary" id="Frameworks">Load</button>
+          <br>
+          <img id="lodashIcon" class="lozad" data-src="resources/images/lodash.png" style="visibility:hidden ; margin:10px;" width="100" />
+          <img id="underscoreIcon" class="lozad" data-src="resources/images/underscore.png" style="visibility:hidden;margin:10px;" width="100" />
+          <img id="ramdaIcon" class="lozad" data-src="resources/images/ramda.png" style="visibility:hidden;margin:10px;" width="100" />
+          <img id="momentIcon" class="lozad" data-src="resources/images/moment.png" style="margin:10px;visibility:hidden" width="100" />
+          <img id="mathIcon" class="lozad" data-src="resources/images/math.png" style="margin:10px;visibility:hidden" width="100" />
+          <img id="collectIcon" class="lozad" data-src="resources/images/collect.jpg" style="margin:10px;visibility:hidden" width="120" height="30px" />
+          <p>Loaded libraries:</p>
+          <div id='loaded_list'></div>
+      </div>
 
         <hr>
 
-        <p style="margin-top: 20px;font-weight: bold">B) Load another library! (experimental)</p>
-        <form style="border-bottom: 1px solid grey;">
-            Library:<br>
-            <input type="text" id="arbLibrary" ><br><br>
-            CDN URL:<br>
-            <input type="text" id="arbURL" placeholder="Type URL including https://cdnjs.cloudflare.com/... " required onclick="updateInput(this.value)" ><br><br>
-            Version variable (optional)<br>
-            <input type="text" id="arbVersion" required><br><br>
-            Library default variable <br>
-            <input type="text" id="arbVariable"><br><br>
-            <button style = "background-color: rgb(9 , 19 , 51);color: white;width: 80px;margin-left: 350px;margin-bottom: 10px;" type="button" value="Load" onclick="custom_loadScript()">Load</button>
-        </form>
-        <p style="margin-top : 20px;font-weight: bold">C) Unload all</p>
+      <div class="container" id="lib_load">
+        <h4>B) Load another library! (experimental)</h4>
         <form>
-            <button style = "background-color: rgb(9 , 19 , 51);color: white;margin-left: 346px;"  type="button" value="Unload" onclick="unloadScripts(this.value)">Unload</button>
+          <div class="mb-3">
+            <label class="form-label">Library:</label>
+            <input type="text" class="form-control" id="arbLibrary" >
+          </div>
+          <div class="mb-3">
+            <label class="form-label">CDN URL:</label>
+            <input type="text" class="form-control" id="arbURL" placeholder="Type URL including https://cdnjs.cloudflare.com/... " required onclick="updateInput(this.value)" >
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Version variable (optional):</label>
+            <input type="text" class="form-control" id="arbVersion" required >
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Library default variable:</label>
+            <input type="text" class="form-control" id="arbVariable">
+          </div>
+          <button class="btn btn-secondary" type="button" value="Load" onclick="custom_loadScript()">Load</button>
         </form>
-        <hr>
-        <p style="margin-top : 20px;font-weight: bold">D) Diff of two libraries! Just select two libs:</p>
-        <div id="frameworksDiff">
+      </div>
 
-        </div>
-        <button id="FrameworksDiff" style="background: rgb(9 , 19 , 51);border: 2px solid transparent;color: whitesmoke;margin-left: 337px;margin-bottom: 10px;">Difference</button>
-        <div class="ShowHide" id="diffBar" style="overflow-y:scroll; overflow-x:hidden; height:100px;">
+        <hr>
+
+      <div class="container" id="lib_unload">
+        <h4>C) Unload all</h4>
+        <form>
+            <button class="btn btn-secondary" type="button" value="Unload" onclick="unloadScripts(this.value)">Unload</button>
+        </form>
+      </div>
+
+        <hr>
+
+      <div class="container" id="lib_diff">
+        <h4>D) Differences between two libraries. Select two libraries:</h4>
+        <div id="frameworksDiff"></div>
+        <button class="btn btn-secondary" type="button" id="FrameworksDiff">Difference</button>
+        <div class="ShowHide" id="diffBar">
+            <div id="left">
+              <p>Differences between the libraries:</p>
+            </div>
             <div id="right">
                 <a href="javascript:void(0)" onclick="Hide(diffBar); return false;">[X]</a><br>
                 <a href="javascript:void(0)" onclick="Clear(diffBar); return false;">Clear</a>
-             
-            </div>
-            <div id="left">
-                Difference between the libraries
             </div>
         </div>
+      </div>
+
         <hr>
+
+      <div class="container" id="print_func">
         <p>This section shows results of 'print(obj)' which returns all functions in obj along with links to official documentations.</p>
-        <div class="ShowHide" id="loggingBar" style="overflow-y:scroll; overflow-x:hidden; height:100px;">
-            <div id="right">
-                <a href="javascript:void(0)" onclick="Hide(loggingBar); return false;">[X]</a><br>
-                <a href="javascript:void(0)" onclick="Clear(loggingBar); return false;">Clear</a>
-                
-            </div>
-            <div id="left">
-                Loggings
-            </div>
+        <div class="ShowHide" id="loggingBar">
+          <div id="left">
+              <p>Loggings:</p>
+          </div>
+          <div id="right">
+              <a href="javascript:void(0)" onclick="Hide(loggingBar); return false;">[X]</a><br>
+              <a href="javascript:void(0)" onclick="Clear(loggingBar); return false;">Clear</a>
+          </div>
         </div>
+      </div>
+
     </div>
-    <br>
-    <p>This is <a href="https://www.linkedin.com/in/abderrahim-benseguane-85018413a/">Abderrahim Benseguane</a> discovering JavaScript along with HTML dom in 3 days.
-        I acknowledge <a href="https://github.com/bacloud14/Interactive_Arrays">code here</a> is very poorly written, as I am a beginner in JS for web developement. If you have time to review not more than one thousand lines of code as a form of collaboration, you are more than welcome. <br>
-    A way better styling thanks to <a href="https://github.com/Shivansh1552">Shivansh1552</a>.
-    </p>
+    <nav class="navbar sticky-bottom navbar-dark bg-dark">
+      <div class="container-fluid">
+        <div class="center">
+  				<p>Code: <a href="https://github.com/bacloud14/Interactive_Arrays" target="_blank"><i class="fab fa-github"></i></a> | Copyright &copy; <a href="https://www.linkedin.com/in/abderrahim-benseguane-85018413a/" target="_blank">Abderrahim Benseguane</a> 2021 | Contributors: <a href="https://github.com/bacloud14/Interactive_Arrays/graphs/contributors" target="_blank"><i class="fas fa-code-branch"></i></a>  </p>
+  			</div>
+      </div>
+    </nav>
 </body>
+
+
+
+
 <script src="resources/js/main.js"></script>
 <script src="vendors/stemmer.js"></script>
 <script src="vendors/devtools-detect-index.js"></script>
