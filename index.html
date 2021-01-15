@@ -18,8 +18,7 @@
 </head>
 
 <body>
-    <!-- Change div id to id="error" to display and remove style from div tag -->
-    <div class="hidden" style="display: none;">
+    <div class="main" id="error">
       <header>
         <h1>INTERACTIVE_ARRAYS</h1>
         <a type="button" class="btn btn-primary" id="fork_btn" href="https://github.com/bacloud14/Interactive_Arrays" target="_blank">FORK<i class="fas fa-code-branch"></i></a>
@@ -31,16 +30,14 @@
       </header>
 
       <div>
-        <img id="error" class="lozad" data-src="resources/images/Peugeot_404_Injection.jpg" alt="404, not found :( , Yet !"/>
+        <img id="error_img" class="lozad" data-src="resources/images/Peugeot_404_Injection.jpg" alt="404, not found :( , Yet !"/>
         <p>
           The Peugeot 404 is a large family car produced by French automobile manufacturer Peugeot from 1960 to 1975. A truck body style variant was marketed until 1988. The 404 was manufactured under licence in various African countries until 1991 (in Kenya) and was manufactured in Argentina by Safrar/Sevel in El Palomar, in Québec, Canada at the St-Bruno-de-Montarville SOMA Ltd. plant and in Chile by Automotores Franco Chilena S.A. in Los Andes. <a href="https://en.wikipedia.org/wiki/Peugeot_404">The Wikipedia</a>
         </p>
       </div>
     </div>
 
-
-    <!-- Change div id to id="options" to hide -->
-    <div class="main">
+    <div class="main" id="options">
       <header>
         <h1>INTERACTIVE_ARRAYS</h1>
         <a type="button" class="btn btn-primary" id="fork_btn" href="https://github.com/bacloud14/Interactive_Arrays" target="_blank">FORK<i class="fas fa-code-branch"></i></a>
@@ -73,8 +70,10 @@
           <img id="momentIcon" class="lozad" data-src="resources/images/moment.png" style="margin:10px;visibility:hidden" width="100" />
           <img id="mathIcon" class="lozad" data-src="resources/images/math.png" style="margin:10px;visibility:hidden" width="100" />
           <img id="collectIcon" class="lozad" data-src="resources/images/collect.jpg" style="margin:10px;visibility:hidden" width="120" height="30px" />
-          <p>Loaded libraries:</p>
-          <div id='loaded_list'></div>
+          <div class="loaded">
+            <p>Loaded libraries:</p>
+            <div id='loaded_list'></div>
+          </div>
       </div>
 
         <hr>
@@ -140,6 +139,7 @@
               <a href="javascript:void(0)" onclick="Hide(loggingBar); return false;">[X]</a><br>
               <a href="javascript:void(0)" onclick="Clear(loggingBar); return false;">Clear</a>
           </div>
+          <hr />
         </div>
       </div>
 
