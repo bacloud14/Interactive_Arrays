@@ -83,7 +83,7 @@ function _loadScript(selectedIds) {
                   if(!$("#frameworksDiff").text().includes(value))
                     $("#frameworksDiff").append($(checkbox));
                 })
-                
+
                 // wrapping each function by the console timer:
               try {
                 timeIt(eval("window[\"" + this.newVarPath + "\"]"));
@@ -166,9 +166,9 @@ $(document).ready(function ($) {
         var functions = [];
         selectedIds.map(function(lib, index){
           if(index==0)
-            functions.push("<b>"+lib+"</b><br>");
+            functions.push("<hr><p>"+lib+"</p>");
           else {
-            functions.push("<br><b>"+lib+"</b><br>");
+            functions.push("<hr><p>"+lib+"</p>");
           }
           functions = functions.concat(Object.getOwnPropertyNames(window[lib]).filter(function (p) {
               return typeof window[lib][p] === 'function';
@@ -333,7 +333,7 @@ function Clear(div) {
         <a href="#" onclick="Clear(loggingBar);">Clear</a>\
     </div>\
     <div id="left">\
-        Loggings\
+        <p>Loggings:</p>\
     </div>';
 
     if(div.innerHTML.includes("diffBar"))
@@ -342,7 +342,7 @@ function Clear(div) {
       <a href="#" onclick="Clear(diffBar);">Clear</a>\
   </div>\
   <div id="left">\
-      Difference between the libraries\
+      <p>Differences between the libraries:</p>\
   </div>';
 }
 
